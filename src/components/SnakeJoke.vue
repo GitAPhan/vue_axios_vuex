@@ -18,18 +18,15 @@ export default {
     make_snake_joke() {
       this.$store.commit(
         "update_display_jokes",
-        this.make_snake_from_string(this.jokes.__ob__.value.data.joke)
+        this.make_snake_from_string(this.jokes)
       );
       // grabbing container to hide option buttons after click
-      var option_button_container = document.getElementById(
-        "option_button_container"
-      );
-      option_button_container.style.display = "none";
+      this.$store.commit("update_display_option_buttons", false);
     },
   },
   computed: {
     jokes() {
-    // grabbing the 'jokes' from the state
+      // grabbing the 'jokes' from the state
       return this.$store.state["jokes"];
     },
   },

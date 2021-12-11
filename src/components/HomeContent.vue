@@ -1,8 +1,9 @@
 <template>
   <div>
-      <h1>Would you like to hear a joke?</h1>
+    <h1>Would you like to hear a joke?</h1>
     <joke-button></joke-button>
-    <p>{{display_joke}}</p>
+    <!-- joke to be displayed here, using variable 'display_joke' from state -->
+    <p>{{ display_joke }}</p>
   </div>
 </template>
 
@@ -14,9 +15,9 @@ export default {
     JokeButton,
   },
   computed: {
-      display_joke() {
-          return this.$store.state["display_joke"];
-      }
+    display_joke() {
+      return this.$store.state["display_joke"];
+    },
   },
 };
 </script>

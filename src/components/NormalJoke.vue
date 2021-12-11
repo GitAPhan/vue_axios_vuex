@@ -9,13 +9,12 @@
 export default {
   name: "normal-joke",
   methods: {
-    // function to grab 'jokes' from store and update 'display_jokes' 
-      make_normal_joke() {
-          this.$store.commit('update_display_jokes', this.jokes.__ob__.value.data.joke);
-          // grabbing container to hide option buttons after click
-          var option_button_container = document.getElementById('option_button_container');
-          option_button_container.style.display = 'none';
-      }
+    // function to grab 'jokes' from store and update 'display_jokes'
+    make_normal_joke() {
+      this.$store.commit("update_display_jokes", this.jokes);
+      // grabbing container to hide option buttons after click
+      this.$store.commit("update_display_option_buttons", false);
+    },
   },
   computed: {
     // grabbing the 'jokes' from the state
