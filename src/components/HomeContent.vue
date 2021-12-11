@@ -1,15 +1,25 @@
 <template>
-    <div>
-
-    </div>
+  <div>
+      <h1>Would you like to hear a joke?</h1>
+    <joke-button></joke-button>
+    <p>{{display_joke}}</p>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'home-content',
-    }
+import JokeButton from "./JokeButton.vue";
+export default {
+  name: "home-content",
+  components: {
+    JokeButton,
+  },
+  computed: {
+      display_joke() {
+          return this.$store.state["display_joke"];
+      }
+  },
+};
 </script>
 
 <style scoped>
-
 </style>
